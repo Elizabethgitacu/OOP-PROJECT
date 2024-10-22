@@ -14,3 +14,32 @@ class Student {
         this.id = id;
         this.scores = new int[SUBJECT_COUNT];
     }
+public void enterScores() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter scores for " + this.name);
+        for (int i = 0; i < SUBJECT_COUNT; i++) {
+            System.out.print(SUBJECTS[i] + ": ");
+            this.scores[i] = scanner.nextInt();
+        }
+    }
+
+    public int calculateTotal() {
+        int total = 0;
+        for (int score : this.scores) {
+            total += score;
+        }
+        return total;
+    }
+
+    public double calculateAverage() {
+        int total = calculateTotal();
+        return (double) total / SUBJECT_COUNT;
+    }
+
+    public String getGrade(double average) {
+        if (average >= 80) return "A (Excellent)";
+        else if (average >= 65) return "B (Good)";
+        else if (average >= 50) return "C (Average)";
+        else if (average >= 40) return "D (Poor)";
+        else return "F (Fail)";
+    }
