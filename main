@@ -1,0 +1,16 @@
+import java.util.Scanner;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+class Student {
+    String name;
+    String id;
+    int[] scores;
+    final int SUBJECT_COUNT = 5; // Assuming we have 5 subjects
+    final String[] SUBJECTS = {"Computer Science", "Information Technology", "Economics", "Accounting", "Computational Mathematics"};
+
+    public Student(String name, String id) {
+        this.name = name;
+        this.id = id;
+        this.scores = new int[SUBJECT_COUNT];
+    }
